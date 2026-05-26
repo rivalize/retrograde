@@ -1,0 +1,27 @@
+{
+  "name": "@retrograde/scanner-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist coverage",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@retrograde/evm-adapter": "workspace:*",
+    "bull": "^4.16.5",
+    "pg": "^8.16.3",
+    "pino": "^9.14.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/bull": "^3.15.9",
+    "@types/pg": "^8.15.6"
+  }
+}
