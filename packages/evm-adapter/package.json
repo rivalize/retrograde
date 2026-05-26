@@ -1,0 +1,20 @@
+{
+  "name": "@retrograde/evm-adapter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist coverage",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --coverage",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "pino": "^9.14.0",
+    "viem": "^2.39.3",
+    "zod": "^3.25.76"
+  }
+}
