@@ -14,7 +14,7 @@
     "format": "prettier --write .",
     "lint": "pnpm typecheck",
     "test": "pnpm -r test",
-    "typecheck": "pnpm --filter @retrograde/evm-adapter typecheck && pnpm --filter @retrograde/evm-adapter build && pnpm --filter @retrograde/scanner-core typecheck"
+    "typecheck": "pnpm --filter @retrograde/evm-adapter typecheck && pnpm --filter @retrograde/evm-adapter build && pnpm --filter @retrograde/solana-adapter typecheck && pnpm --filter @retrograde/solana-adapter build && pnpm --filter @retrograde/scanner-core typecheck"
   },
   "devDependencies": {
     "@types/node": "^20.19.25",

@@ -109,6 +109,18 @@ All EVM chains use one base adapter. The adapter must:
 
 Scanner core owns the canonical zod schemas, Bull queues, typed scan job payloads, and PostgreSQL schema for persisted scan results. Phase 2 must wire a `scan:endpoint` job to the EVM adapter and normalize output to `ScanResult`.
 
+## Solana Adapter
+
+The Solana adapter owns Solana JSON-RPC access and realtime account subscriptions. The adapter must:
+
+- Use Helius as the primary Solana JSON-RPC provider when `HELIUS_API_KEY` is configured.
+- Use `CHAINSTACK_SOLANA_URL` as the Solana JSON-RPC fallback when configured.
+- Keep a public Solana RPC descriptor as a development fallback.
+- Validate all public keys before account reads and subscriptions.
+- Normalize account and program account data into base64 payloads for scanner consumers.
+- Provide liveness through `getSlot()`.
+- Prefer Yellowstone Geyser subscriptions when `HELIUS_GEYSER_URL` and `HELIUS_API_KEY` are configured, falling back to Solana websocket account subscriptions otherwise.
+
 ## Persistence
 
 PostgreSQL is the durable store. Redis backs Bull queues. Phase 2 requires a `scan_results` table with JSONB fields for latency, vulnerabilities, and metadata.

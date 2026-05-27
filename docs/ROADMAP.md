@@ -32,11 +32,11 @@
 
 ## Phase 3 - Solana Adapter
 
-- [ ] Solana JSON-RPC adapter
-- [ ] Helius primary RPC
-- [ ] Chainstack fallback
-- [ ] Yellowstone Geyser subscription support
-- [ ] Slot liveness checks
+- [x] Solana JSON-RPC adapter
+- [x] Helius primary RPC
+- [x] Chainstack fallback
+- [x] Yellowstone Geyser subscription support
+- [x] Slot liveness checks
 
 ## Phase 4 - Vulnerability Scanner
 
