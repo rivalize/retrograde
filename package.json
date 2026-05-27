@@ -8,13 +8,14 @@
     "node": ">=20.11.0"
   },
   "scripts": {
+    "dev": "pnpm --filter @retrograde/frontend dev",
     "build": "pnpm -r build",
     "clean": "pnpm -r clean",
     "db:migrate": "pnpm --filter @retrograde/scanner-core db:migrate",
     "format": "prettier --write .",
     "lint": "pnpm typecheck",
     "test": "pnpm -r test",
-    "typecheck": "pnpm --filter @retrograde/evm-adapter typecheck && pnpm --filter @retrograde/evm-adapter build && pnpm --filter @retrograde/scanner-core typecheck"
+    "typecheck": "pnpm --filter @retrograde/evm-adapter typecheck && pnpm --filter @retrograde/evm-adapter build && pnpm --filter @retrograde/scanner-core typecheck && pnpm --filter @retrograde/frontend typecheck"
   },
   "devDependencies": {
     "@types/node": "^20.19.25",
