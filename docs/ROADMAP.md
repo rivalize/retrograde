@@ -40,9 +40,9 @@
 
 ## Phase 4 - Vulnerability Scanner
 
-- [ ] Static contract analysis
-- [ ] Dynamic simulation analysis
-- [ ] Vulnerability normalization to `ScanResult`
+- [x] Static contract analysis
+- [x] Dynamic simulation analysis
+- [x] Vulnerability normalization to `ScanResult`
 
 ## Phase 5 - RepoScan+
 

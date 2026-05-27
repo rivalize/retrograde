@@ -121,6 +121,18 @@ The Solana adapter owns Solana JSON-RPC access and realtime account subscription
 - Provide liveness through `getSlot()`.
 - Prefer Yellowstone Geyser subscriptions when `HELIUS_GEYSER_URL` and `HELIUS_API_KEY` are configured, falling back to Solana websocket account subscriptions otherwise.
 
+## Vulnerability Scanner
+
+The vulnerability scanner owns security analysis and emits canonical `ScanResult` records for vulnerable targets. Phase 4 starts with EVM contract analysis because the EVM adapter already exposes bytecode reads and transaction simulation.
+
+The scanner must:
+
+- Run static EVM bytecode heuristics for dangerous opcodes, upgradeability markers, missing bytecode, and miner-influenced primitives.
+- Run read-only dynamic probes through `simulateTransaction()`.
+- Normalize all findings to canonical `Vulnerability` records.
+- Normalize contract scan output to `ScanResult` with `targetType: "contract"` and `status: "vulnerable"` when findings are present.
+- Preserve analyzer evidence in `metadata` without changing the canonical result schema.
+
 ## Persistence
 
 PostgreSQL is the durable store. Redis backs Bull queues. Phase 2 requires a `scan_results` table with JSONB fields for latency, vulnerabilities, and metadata.
