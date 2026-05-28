@@ -176,7 +176,7 @@ img {
 .section-frame {
   position: relative;
   z-index: 1;
-  width: min(1200px, 100%);
+  width: min(1460px, 100%);
   margin: 0 auto 28px;
 }
 
@@ -271,10 +271,14 @@ img {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.22fr) minmax(440px, 0.78fr);
+  gap: 34px;
   align-items: center;
   margin-top: 14px;
+}
+
+.hero-copy {
+  padding-right: 10px;
 }
 
 .hero {
@@ -298,10 +302,14 @@ img {
 }
 
 .hero-copy h1 {
-  max-width: 10ch;
-  font-size: clamp(3.4rem, 8vw, 7rem);
+  max-width: 9.2ch;
+  font-size: clamp(2.7rem, 4.8vw, 6.1rem);
   line-height: 0.92;
   text-shadow: var(--shadow-teal), 0 0 58px rgba(198, 253, 255, 0.16);
+}
+
+.hero-copy .lede {
+  max-width: 62ch;
 }
 
 .page-hero {
@@ -992,5 +1000,26 @@ img {
   .roadmap-panel,
   .neon-panel {
     padding: 18px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .section-frame {
+    width: min(1720px, 100%);
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.3fr) minmax(520px, 0.7fr);
+    gap: 42px;
+  }
+
+  .hero-copy h1 {
+    max-width: 9.8ch;
+    font-size: clamp(3.3rem, 4.8vw, 6.7rem);
+  }
+
+  .feature-grid,
+  .triple-grid {
+    gap: 22px;
   }
 }
