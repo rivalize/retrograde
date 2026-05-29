@@ -46,10 +46,10 @@
 
 ## Phase 5 - RepoScan+
 
-- [ ] GitHub repository scanner
-- [ ] GitLab repository scanner
-- [ ] Bitbucket repository scanner
-- [ ] On-chain bytecode source correlation
+- [x] GitHub repository scanner
+- [x] GitLab repository scanner
+- [x] Bitbucket repository scanner
+- [x] On-chain bytecode source correlation
 
 ## Phase 6 - EVM Smart Contracts
 

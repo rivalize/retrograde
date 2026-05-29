@@ -133,6 +133,18 @@ The scanner must:
 - Normalize contract scan output to `ScanResult` with `targetType: "contract"` and `status: "vulnerable"` when findings are present.
 - Preserve analyzer evidence in `metadata` without changing the canonical result schema.
 
+## RepoScan+
+
+RepoScan+ owns repository-provider ingestion, source analysis, and optional source-to-bytecode correlation. It emits canonical `ScanResult` records with `targetType: "repo"`.
+
+The scanner must:
+
+- Fetch bounded public repository snapshots from GitHub, GitLab, and Bitbucket APIs.
+- Validate provider API responses with zod.
+- Analyze repository files for exposed secrets, risky package manifests, risky CI workflow patterns, and missing security disclosure policy.
+- Correlate repository build artifacts with optional on-chain bytecode using exact and Solidity metadata-stripped bytecode matching.
+- Preserve provider metadata, analyzed byte counts, and bytecode-correlation evidence in `metadata`.
+
 ## Persistence
 
 PostgreSQL is the durable store. Redis backs Bull queues. Phase 2 requires a `scan_results` table with JSONB fields for latency, vulnerabilities, and metadata.

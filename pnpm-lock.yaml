@@ -38,6 +38,18 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
 
+  packages/repo-scanner:
+    dependencies:
+      "@retrograde/scanner-core":
+        specifier: workspace:*
+        version: link:../scanner-core
+      pino:
+        specifier: ^9.14.0
+        version: 9.14.0
+      zod:
+        specifier: ^3.25.76
+        version: 3.25.76
+
   packages/scanner-core:
     dependencies:
       "@retrograde/evm-adapter":
